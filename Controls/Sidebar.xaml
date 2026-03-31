@@ -1,0 +1,99 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDotnet.Controls.Sidebar"
+             x:Name="this">
+
+    <Grid BackgroundColor="white" RowDefinitions="Auto, *, Auto" Padding="30" WidthRequest="300">
+        <HorizontalStackLayout Grid.Row="0" Spacing="10" VerticalOptions="Center" Margin="0,10,0,0">
+            <Image Source="caleta_logo.ico" HeightRequest="35" WidthRequest="35" VerticalOptions="Center"/>
+            <Label Text="Caleta" 
+                   FontSize="28" 
+                   TextColor="#4A5565" 
+                   FontAttributes="None" 
+                   VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="30">
+
+            <HorizontalStackLayout Spacing="15">
+                <Grid WidthRequest="15">
+                    <Label Text="✓" TextColor="#2563eb" IsVisible="False">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="2">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                            <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="3">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Ellipse Fill="#2563eb" WidthRequest="12" HeightRequest="12" IsVisible="False">
+                        <Ellipse.Triggers>
+                            <DataTrigger TargetType="Ellipse" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="1">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                </Grid>
+                <Label Text="Welcome" TextColor="#0B0809" VerticalOptions="Center">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="1">
+                            <Setter Property="Opacity" Value="1.0" />
+                            <Setter Property="FontAttributes" Value="Bold" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="15">
+                <Grid WidthRequest="15">
+                    <Label Text="✓" TextColor="#2563eb" IsVisible="False">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="3">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Ellipse Stroke="#BDC1C6" StrokeThickness="2" WidthRequest="12" HeightRequest="12">
+                        <Ellipse.Triggers>
+                            <DataTrigger TargetType="Ellipse" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="2">
+                                <Setter Property="Fill" Value="#2563eb" />
+                                <Setter Property="StrokeThickness" Value="0" />
+                            </DataTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                </Grid>
+                <Label Text="Authentication" TextColor="#0B0809" VerticalOptions="Center" Opacity="0.5">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="2">
+                            <Setter Property="Opacity" Value="1.0" />
+                            <Setter Property="FontAttributes" Value="Bold" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="15">
+                <Ellipse Stroke="#BDC1C6" StrokeThickness="2" WidthRequest="12" HeightRequest="12">
+                    <Ellipse.Triggers>
+                        <DataTrigger TargetType="Ellipse" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="3">
+                            <Setter Property="Fill" Value="#2563eb" />
+                            <Setter Property="StrokeThickness" Value="0" />
+                        </DataTrigger>
+                    </Ellipse.Triggers>
+                </Ellipse>
+                <Label Text="Installation" TextColor="#0B0809" VerticalOptions="Center" Opacity="0.5">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference this}, Path=ActiveStep}" Value="3">
+                            <Setter Property="Opacity" Value="1.0" />
+                            <Setter Property="FontAttributes" Value="Bold" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+        <Label Grid.Row="2" Text="v1.0.0 Secure Printer deployment tool" TextColor="White" Opacity="0.5" FontSize="11"/>
+    </Grid>
+</ContentView>
