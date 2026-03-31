@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiDotnet.Controls"
+             x:Class="MauiDotnet.Pages.WelcomePage"
+             BackgroundColor="#0A1E46"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid ColumnDefinitions="Auto, *">
+        
+        <controls:Sidebar ActiveStep="1" Grid.Column="0" />
+
+        <VerticalStackLayout Grid.Column="1" 
+                                Padding="60" 
+                                VerticalOptions="Center" 
+                                Spacing="30">
+            
+            <Label Text="Secure Printer Setup"
+                    FontSize="32" 
+                    FontAttributes="Bold" 
+                    TextColor="White" />
+
+            <Label Text="This tool will deploy the Caleta Secure Print Queue to your computer. You will be able to release print jobs securely from any authorized printer."
+                    FontSize="16"
+                    TextColor="#B0C4DE"
+                    LineHeight="1.5" />
+
+            <Border StrokeShape="RoundRectangle 8" 
+                    BackgroundColor="#1A2E5A" 
+                    Padding="20" 
+                    StrokeThickness="0">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Requirements:" TextColor="White" FontAttributes="Bold"/>
+                    <Label Text="• Active Internet Connection" TextColor="#B0C4DE"/>
+                    <Label Text="• Microsoft Office 365 Account" TextColor="#B0C4DE"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button x:Name="ConnectButton"
+                    Text="Get Started"
+                    BackgroundColor="#2563eb"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    HorizontalOptions="Start"
+                    Padding="40,0"
+                    Clicked="OnGetStartedClicked" />
+            
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

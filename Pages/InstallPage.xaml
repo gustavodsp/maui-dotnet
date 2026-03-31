@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiDotnet.Controls"
+             x:Class="MauiDotnet.Pages.InstallPage"
+             BackgroundColor="#0A1E46"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid ColumnDefinitions="Auto, *">
+        
+        <controls:Sidebar Grid.Column="0" ActiveStep="2" />
+
+        <VerticalStackLayout Grid.Column="1" Padding="60" Spacing="30" VerticalOptions="Center">
+            
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Ready to Install" 
+                       FontSize="32" 
+                       FontAttributes="Bold" 
+                       TextColor="White" />
+                <Label Text="We've successfully verified your account. Review the details below before we proceed."
+                       TextColor="#B0C4DE" 
+                       FontSize="16" />
+            </VerticalStackLayout>
+
+            <Border StrokeShape="RoundRectangle 12" 
+                    BackgroundColor="White" 
+                    Padding="30" 
+                    StrokeThickness="0">
+                <VerticalStackLayout Spacing="20">
+                    
+                    <HorizontalStackLayout Spacing="20">
+                        <Border StrokeShape="RoundRectangle 25" HeightRequest="50" WidthRequest="50" BackgroundColor="#E8F0FE" StrokeThickness="0">
+                            <Label Text="GP" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#2563eb" FontAttributes="Bold" />
+                        </Border>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Gustavo Pereira" TextColor="#3C4043" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="gpereira@caletasolutions.com" TextColor="#5F6368" FontSize="14"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <BoxView HeightRequest="1" Color="#F1F3F4" Margin="0,10" />
+
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="🖨️" FontSize="24" VerticalOptions="Center" />
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label Text="Secure Print for gpereira" TextColor="#3C4043" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="HP Universal Printing PCL 6" TextColor="#5F6368" FontSize="13"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Install Now" 
+                    BackgroundColor="#2563eb" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    Padding="40,0"
+                    HeightRequest="50"
+                    Clicked="OnInstallClicked"/>
+
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
